@@ -9,7 +9,7 @@ This project demonstrates **AI-assisted test case generation** using **Playwrigh
 |---|-------------|------|
 | 1 | Feature Description | [`feature_description.md`](./feature_description.md) |
 | 2 | AI Prompt | [`ai_prompt.md`](./ai_prompt.md) |
-| 3 | Generated Tests | [`test_login.py`](./test_login.py) |
+| 3 | Generated Tests | [`src/test_login.py`](./src/test_login.py) |
 | 4 | Execution Screenshot | [`screenshots/execution_screenshot.png`](./screenshots/execution_screenshot.png) |
 
 ## Test Results
@@ -33,12 +33,14 @@ test_login.py::TestFailedLogin::test_invalid_password_stays_on_login_page[chromi
 ## Project Structure
 
 ```
-├── pages/                        # Page Object Model classes
-│   ├── __init__.py
-│   ├── login_page.py             # Login page interactions
-│   └── success_page.py           # Success page interactions
-├── conftest.py                   # Shared fixtures & screenshot hook
-├── test_login.py                 # 7 AI-generated test cases
+├── src/                          # Your code (Test cases and POM)
+│   ├── pages/                    # Page Object Model classes
+│   │   ├── __init__.py
+│   │   ├── login_page.py         # Login page interactions
+│   │   └── success_page.py       # Success page interactions
+│   ├── conftest.py               # Shared fixtures & screenshot hook
+│   └── test_login.py             # 7 AI-generated test cases
+├── screenshots/                  # Output screenshots (auto-captured on failure/manual execution proofs)
 ├── pytest.ini                    # Pytest configuration
 ├── requirements.txt              # Python dependencies
 ├── feature_description.md        # Feature description
@@ -63,13 +65,13 @@ pip install pytest pytest-playwright pytest-html
 playwright install chromium
 
 # Run all tests
-python -m pytest test_login.py -v --html=reports/test_report.html --self-contained-html
+python -m pytest src/test_login.py -v --html=reports/test_report.html --self-contained-html
 
 # Run only positive tests
-python -m pytest test_login.py -v -m positive
+python -m pytest src/test_login.py -v -m positive
 
 # Run only negative tests
-python -m pytest test_login.py -v -m negative
+python -m pytest src/test_login.py -v -m negative
 ```
 
 ## Technology Stack
@@ -83,3 +85,10 @@ python -m pytest test_login.py -v -m negative
 ## Target Application
 
 Tests are written against: [Practice Test Automation - Login Page](https://practicetestautomation.com/practice-test-login/)
+
+## Observations
+
+- **AI Effectiveness**: Claude AI successfully captured all login scenarios from the provided feature description. The AI was exceptionally good at generating robust tests that check for expected outcomes, error messages, and URL redirections.
+- **Page Object Model**: Applying the Page Object Model (POM) makes the tests extremely readable and simple to maintain. The interactions are cleanly separated from the assertions.
+- **Test execution reliability**: Initially, a timeout issue occurred because the practice site responded too slowly. Increasing the Playwright wait timeouts fixed the flakiness and ensured a solid 100% pass rate across runs.
+- **Reporting Integration**: Integrating `pytest-html` and `allure-pytest` was seamless and immediately provided tremendous visibility into execution status, execution times, and screenshots attached to failed tests.

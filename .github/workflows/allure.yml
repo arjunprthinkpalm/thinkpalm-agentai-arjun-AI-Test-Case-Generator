@@ -33,7 +33,7 @@ jobs:
         playwright install --with-deps chromium
 
     - name: Run Pytest
-      run: python -m pytest test_login.py
+      run: python -m pytest src/test_login.py
       continue-on-error: true
 
     - name: Get Allure history
