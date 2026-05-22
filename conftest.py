@@ -58,4 +58,4 @@ def pytest_runtest_makereport(item, call):
             os.makedirs(screenshot_dir, exist_ok=True)
             screenshot_path = os.path.join(screenshot_dir, f"{item.name}.png")
             page.screenshot(path=screenshot_path)
-            print(f"\n📸 Screenshot saved: {screenshot_path}")
+            print(f"\n[Screenshot] Screenshot saved: {screenshot_path}")
