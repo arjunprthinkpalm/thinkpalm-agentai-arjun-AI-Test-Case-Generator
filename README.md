@@ -10,9 +10,11 @@ This project demonstrates **AI-assisted test case generation** using **Playwrigh
 | 1 | Feature Description | [`feature_description.md`](./feature_description.md) |
 | 2 | AI Prompt | [`ai_prompt.md`](./ai_prompt.md) |
 | 3 | Generated Tests | [`test_login.py`](./test_login.py) |
-| 4 | Execution Screenshot | See [Results](#test-results) below |
+| 4 | Execution Screenshot | [`execution_screenshot.png`](./execution_screenshot.png) |
 
 ## Test Results
+
+![Execution Screenshot](./execution_screenshot.png)
 
 **All 7 tests PASSED ✅**
 
