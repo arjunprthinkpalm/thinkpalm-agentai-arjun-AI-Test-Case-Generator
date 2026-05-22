@@ -1,0 +1,70 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"
+Test Case 6: Verify user stays on login page after invalid username.
+
+Steps:
+    1. Navigate to the login page
+    2. Enter an invalid username with a valid password
+    3. Click Submit
+    4. Verify the URL still contains the login page path
+","2098","test_invalid_username_stays_on_login_page[chromium]","","2026-05-22","passed","2026-05-22","TestFailedLogin","test_login","",""
+"
+Test Case 1: Verify successful login redirects to the correct URL.
+
+Steps:
+    1. Navigate to the login page
+    2. Enter valid username and password
+    3. Click Submit
+    4. Verify URL contains 'logged-in-successfully'
+","26425","test_successful_login_redirects_to_success_page[chromium]","","2026-05-22","passed","2026-05-22","TestSuccessfulLogin","test_login","",""
+"
+Test Case 2: Verify success page displays congratulations message.
+
+Steps:
+    1. Navigate to the login page
+    2. Enter valid credentials and submit
+    3. Verify success message contains 'Congratulations' or 'successfully logged in'
+","15842","test_successful_login_displays_success_message[chromium]","","2026-05-22","passed","2026-05-22","TestSuccessfulLogin","test_login","",""
+"
+Test Case 5: Verify error message for invalid password.
+
+Steps:
+    1. Navigate to the login page
+    2. Enter a valid username with an invalid password
+    3. Click Submit
+    4. Verify error message: 'Your password is invalid!'
+","103","test_login_with_invalid_password_shows_error[chromium]","","2026-05-22","passed","2026-05-22","TestFailedLogin","test_login","",""
+"
+Test Case 4: Verify error message for invalid username.
+
+Steps:
+    1. Navigate to the login page
+    2. Enter an invalid username with a valid password
+    3. Click Submit
+    4. Verify error message: 'Your username is invalid!'
+","102","test_login_with_invalid_username_shows_error[chromium]","","2026-05-22","passed","2026-05-22","TestFailedLogin","test_login","",""
+"
+Test Case 2: Verify success page displays congratulations message.
+
+Steps:
+    1. Navigate to the login page
+    2. Enter valid credentials and submit
+    3. Verify success message contains 'Congratulations' or 'successfully logged in'
+","30101","test_successful_login_displays_success_message[chromium]","","2026-05-22","broken","2026-05-22","","","",""
+"
+Test Case 3: Verify the Log out button is visible after successful login.
+
+Steps:
+    1. Navigate to the login page
+    2. Enter valid credentials and submit
+    3. Verify 'Log out' button/link is visible
+","6128","test_successful_login_shows_logout_button[chromium]","","2026-05-22","passed","2026-05-22","TestSuccessfulLogin","test_login","",""
+"
+Test Case 7: Verify user stays on login page after invalid password.
+
+Steps:
+    1. Navigate to the login page
+    2. Enter a valid username with an invalid password
+    3. Click Submit
+    4. Verify the URL still contains the login page path
+","2102","test_invalid_password_stays_on_login_page[chromium]","","2026-05-22","passed","2026-05-22","TestFailedLogin","test_login","",""
